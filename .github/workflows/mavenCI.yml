@@ -31,4 +31,3 @@ jobs:
         
     - name: 3 - Compilation step
       run: mvn -B clean compile --file pom.xml
-
