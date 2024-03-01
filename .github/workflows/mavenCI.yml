@@ -7,7 +7,7 @@ on:
 jobs:
 
   build:
-    name: compile
+    name: CI test de compilation
     runs-on: ubuntu-latest
 
     steps:
