@@ -13,7 +13,7 @@ import lombok.Setter;
 public class Etudiant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "nom")
     private String lastName;
@@ -29,7 +29,7 @@ public class Etudiant {
     private Classe classe;
     public Etudiant(){}
 
-    public Etudiant(long id, String lastName, String firstName, boolean sexe, Classe classe) {
+    public Etudiant(Long id, String lastName, String firstName, boolean sexe, Classe classe) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
