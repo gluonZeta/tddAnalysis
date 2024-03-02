@@ -1,4 +1,4 @@
-package gluon.projects.tddAnalysis;
+package gluon.projects.tddanalysis;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

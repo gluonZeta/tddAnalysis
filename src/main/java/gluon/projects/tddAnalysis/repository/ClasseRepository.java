@@ -1,6 +1,6 @@
-package gluon.projects.tddAnalysis.repository;
+package gluon.projects.tddanalysis.repository;
 
-import gluon.projects.tddAnalysis.data.entity.Classe;
+import gluon.projects.tddanalysis.data.entity.Classe;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

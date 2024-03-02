@@ -1,4 +1,4 @@
-package gluon.projects.tddAnalysis.data.entity;
+package gluon.projects.tddanalysis.data.entity;
 
 import jakarta.persistence.*;
 import lombok.Builder;

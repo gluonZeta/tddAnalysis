@@ -1,6 +1,6 @@
-package gluon.projects.tddAnalysis.repository;
+package gluon.projects.tddanalysis.repository;
 
-import gluon.projects.tddAnalysis.data.entity.Classe;
+import gluon.projects.tddanalysis.data.entity.Classe;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
