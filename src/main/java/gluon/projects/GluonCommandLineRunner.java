@@ -1,4 +1,4 @@
-package gluon.projects.tddanalysis;
+package gluon.projects;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
