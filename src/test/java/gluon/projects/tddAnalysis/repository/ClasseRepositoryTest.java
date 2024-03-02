@@ -17,7 +17,7 @@ class ClasseRepositoryTest {
     ClasseRepository classeRepository;
 
     @Test
-    public void givenId_whenFindById_thenReturnClasse(){
+    void givenId_whenFindById_thenReturnClasse(){
         long idTest = 2;
         Optional<Classe> optionalClasse = classeRepository.findById(idTest);
         assertTrue(!optionalClasse.isEmpty());

@@ -17,7 +17,7 @@ class EtudiantRepositoryTest {
     EtudiantRepository etudiantRepository;
 
     @Test
-    public void givenEtudiant_whenUpdateEtudiant_returnNewEtudiantValue(){
+    void givenEtudiant_whenUpdateEtudiant_returnNewEtudiantValue(){
         List<Etudiant> optionalEtudiants = etudiantRepository.findAll();
         assertEquals(49, optionalEtudiants.size());
         Optional<Etudiant> optionalEtudiant = etudiantRepository.findById((long) 3);
@@ -33,7 +33,7 @@ class EtudiantRepositoryTest {
     }
 
     @Test
-    public void givenEtudiant_whenSaveEtudiant_returnEtudiantWithId(){
+    void givenEtudiant_whenSaveEtudiant_returnEtudiantWithId(){
         Etudiant etudiant = Etudiant
                 .builder()
                 .lastName("Dirac")
@@ -46,7 +46,7 @@ class EtudiantRepositoryTest {
     }
 
     @Test
-    public void givenClasseName_whenFindEdutiant_returnEtudiantInTheClasse(){
+    void givenClasseName_whenFindEdutiant_returnEtudiantInTheClasse(){
         Optional<List<Etudiant>> optionalEtudiants = etudiantRepository.findEdutiant("Seconde");
         assertTrue(!optionalEtudiants.isEmpty());
         List<Etudiant> etudiants = optionalEtudiants.get();
@@ -63,7 +63,7 @@ class EtudiantRepositoryTest {
     }
 
     @Test
-    public void givenSexe_whenFindBySexe_thenReturnListEtudiant(){
+    void givenSexe_whenFindBySexe_thenReturnListEtudiant(){
         Optional<List<Etudiant>> optionalEtudiants = etudiantRepository.findBySexe(true);
         assertTrue(!optionalEtudiants.isEmpty());
         List<Etudiant> etudiants = optionalEtudiants.get();
