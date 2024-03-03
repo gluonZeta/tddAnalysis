@@ -1,6 +1,7 @@
 package gluon.projects.repository;
 
 import gluon.projects.data.entity.Etudiant;
+import gluon.projects.data.entity.Etudier;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -15,6 +16,19 @@ class EtudiantRepositoryTest {
 
     @Autowired
     EtudiantRepository etudiantRepository;
+
+    @Test
+    void givenAnEtudiant_whenGetEtudes_thenReturnEtudesList() {
+        Optional<Etudiant> optionalEtudiant = this.etudiantRepository.findByLastName("Hernandez");
+        assertTrue(!optionalEtudiant.isEmpty());
+        Etudiant etudiant = optionalEtudiant.get();
+        List<Etudier> etudiantEtude = etudiant.getMyEtudes();
+        assertEquals(10,etudiantEtude.size());
+        etudiantEtude.stream()
+                .map( x -> x.getMatiere().getName() + " note: " + x.getNote())
+                .forEach(System.out::println);
+    }
+
 
     @Test
     void givenEtudiant_whenUpdateEtudiant_returnNewEtudiantValue(){

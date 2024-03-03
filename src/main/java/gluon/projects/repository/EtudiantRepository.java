@@ -11,6 +11,8 @@ public interface EtudiantRepository  extends JpaRepository<Etudiant, Long> {
 
     Optional<List<Etudiant>> findBySexe(boolean sexe);
 
+    Optional<Etudiant> findByLastName(String lastname);
+
     @Query("select etudiant from Etudiant etudiant where etudiant.classe.name = ?1")
     Optional<List<Etudiant>> findEdutiant(String classeName);
 

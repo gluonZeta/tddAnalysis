@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -27,14 +29,19 @@ public class Etudiant {
     @ManyToOne
     @JoinColumn(name = "id_classe")
     private Classe classe;
+
+    @OneToMany(mappedBy = "etudiant")
+    private List<Etudier> myEtudes;
+
     public Etudiant(){}
 
-    public Etudiant(Long id, String lastName, String firstName, boolean sexe, Classe classe) {
+    public Etudiant(Long id, String lastName, String firstName, boolean sexe, Classe classe, List<Etudier> myEtudes) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.sexe = sexe;
         this.classe = classe;
+        this.myEtudes = myEtudes;
     }
 }
 
