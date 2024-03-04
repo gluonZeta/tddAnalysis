@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @Builder
 @Table(name = "etudier")
+@IdClass(Etudier.class)
 public class Etudier {
 
     @Id
