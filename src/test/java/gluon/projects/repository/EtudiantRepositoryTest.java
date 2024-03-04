@@ -2,10 +2,15 @@ package gluon.projects.repository;
 
 import gluon.projects.data.entity.Etudiant;
 import gluon.projects.data.entity.Etudier;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,8 +22,23 @@ class EtudiantRepositoryTest {
     @Autowired
     EtudiantRepository etudiantRepository;
 
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+
     @Test
-    void givenAnEtudiant_whenGetEtudes_thenReturnEtudesList() {
+    void whenLaunchDataJpaTest_thenVerifyDataBaseConnection(ApplicationContext context) throws SQLException {
+        Assertions.assertNotNull(context);
+        System.out.println("--------------------------------------------------------------------------------");
+        String[] beanNames = context.getBeanDefinitionNames();
+        Arrays.stream(beanNames).forEach(System.out::println);
+        System.out.println("--------------------------------------------------------------------------------");
+        int result = jdbcTemplate.queryForObject("SELECT 1", Integer.class);
+        assertEquals(1, result);
+    }
+
+    @Test
+    void givenAnEtudiant_whenGetEtudes_thenReturnEtudesList(){
         Optional<Etudiant> optionalEtudiant = this.etudiantRepository.findByLastName("Hernandez");
         assertTrue(!optionalEtudiant.isEmpty());
         Etudiant etudiant = optionalEtudiant.get();
