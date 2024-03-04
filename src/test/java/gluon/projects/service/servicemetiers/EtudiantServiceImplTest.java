@@ -34,7 +34,6 @@ class EtudiantServiceImplTest {
             listEtudier.add(Etudier.builder().note(expectedMean).build());
         }
         when(etudierRepository.findByEtudiantLastName(anyString())).thenReturn(listEtudier);
-        float etudiantMean = etudiantServiceImpl.getMean("Dirac");
-        assertEquals(expectedMean,etudiantMean);
+        assertEquals(expectedMean,etudiantServiceImpl.getMean("Dirac"));
     }
 }

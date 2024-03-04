@@ -34,7 +34,7 @@ public class EtudiantServiceImpl implements EtudiantService {
     public Map<String, Float> getEveryOneMean() {
         List<Etudiant> etudiants = etudiantRepository.findAll();
         Map<String, Float> etudiantsMeans = new HashMap<>();
-        Float mean = 0F;
+        Float mean;
         for(Etudiant etudiant: etudiants){
             mean = (etudiant.getMyEtudes().stream().map(x -> x.getNote()).reduce((x,y) -> x+y).get())/etudiant.getMyEtudes().size();
             etudiantsMeans.put(etudiant.getLastName(), mean);
