@@ -20,10 +20,13 @@
 		<jacoco.version>0.8.6</jacoco.version>
 		<sonar.cpd.exclusions>**/data/**</sonar.cpd.exclusions>
 		<sonar.coverage.exclusions>**/data/**</sonar.coverage.exclusions>
+		<sonar.coverage.exclusions>src/main/java/gluon/projects/GluonCommandLineRunner.java</sonar.coverage.exclusions>
 		<sonar.organization>gluonzeta</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
+
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
