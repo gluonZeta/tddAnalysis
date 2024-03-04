@@ -26,7 +26,7 @@ class EtudiantServiceImplTest {
     EtudierRepository etudierRepository;
 
     @Test
-    void givenEtudiant_whenGetMean_returnMeanOfTheEtudiant(){
+    void getMean() {
         List<Etudier> listEtudier = new ArrayList<>();
         Random random = new Random();
         float expectedMean = 14.5F;
