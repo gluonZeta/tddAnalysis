@@ -17,7 +17,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class EtudiantServiceTest {
+class EtudiantServiceImplTest {
 
     @InjectMocks
     EtudiantServiceImpl etudiantServiceImpl;
@@ -37,5 +37,4 @@ class EtudiantServiceTest {
         float etudiantMean = etudiantServiceImpl.getMean("Dirac");
         assertEquals(expectedMean,etudiantMean);
     }
-
 }
