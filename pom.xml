@@ -19,9 +19,7 @@
 		<java.version>17</java.version>
 		<jacoco.version>0.8.6</jacoco.version>
 		<sonar.cpd.exclusions>**/data/**</sonar.cpd.exclusions>
-		<sonar.coverage.exclusions>**/data/**</sonar.coverage.exclusions>
-		<sonar.coverage.exclusions>src/main/java/gluon/projects/data/entity/**</sonar.coverage.exclusions>
-		<sonar.coverage.exclusions>src/main/java/gluon/projects/**.java</sonar.coverage.exclusions>
+		<sonar.coverage.exclusions>**/data/entity/**,gluon/projects/*.java</sonar.coverage.exclusions>
 		<sonar.organization>gluonzeta</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>

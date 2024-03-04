@@ -8,8 +8,12 @@ import java.util.List;
 
 public class EtudiantServiceImpl implements EtudiantService {
 
-    @Autowired
     EtudierRepository etudierRepository;
+    @Autowired
+    public EtudiantServiceImpl(EtudierRepository etudierRepository){
+        this.etudierRepository = etudierRepository;
+    }
+
     @Override
     public float getMean(String lastname) {
         List<Etudier> listEtudier = etudierRepository.findByEtudiantLastName(lastname);
