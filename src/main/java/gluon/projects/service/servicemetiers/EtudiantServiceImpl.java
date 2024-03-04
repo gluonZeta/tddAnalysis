@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class EtudiantServiceImpl implements EtudiantService {
@@ -28,6 +29,18 @@ public class EtudiantServiceImpl implements EtudiantService {
         List<Etudier> listEtudier = etudierRepository.findByEtudiantLastName(lastname);
         float sum = listEtudier.stream().map(x -> x.getNote()).reduce((x,y) -> x+y).get();
         return sum/listEtudier.size();
+    }
+
+    @Override
+    public float getEtudiantNoteByMatier(String lastname, String matiere) {
+        Optional<Etudiant> optionalListEtudier = etudiantRepository.findByLastName(lastname);
+        if(optionalListEtudier.isPresent()){
+            Etudiant etudiant = optionalListEtudier.get();
+            for(Etudier etudier: etudiant.getMyEtudes()){
+                
+            }
+        }
+        return 0;
     }
 
     @Override
