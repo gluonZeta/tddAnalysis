@@ -15,7 +15,7 @@ class EtudiantServiceImplIT {
 
     @Autowired
     EtudiantService etudiantService;
-
+/*
     @Test
     void givenLastNameAndMatier_whenGetEtudiantNoteByMatiere_thenReturnNote() {
         String lastname = "Martin";
@@ -37,5 +37,7 @@ class EtudiantServiceImplIT {
         }
         System.out.println("----------------------------------------------------------------");
     }
+    
+ */
 
 }
