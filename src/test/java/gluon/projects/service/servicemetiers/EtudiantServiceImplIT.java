@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.AUTO_CONFIGURED)
-public class EtudiantServiceImplIT {
+class EtudiantServiceImplIT {
 
     @Autowired
     EtudiantService etudiantService;
