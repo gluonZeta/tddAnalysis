@@ -18,6 +18,7 @@ public class EtudiantServiceImpl implements EtudiantService {
     EtudiantRepository etudiantRepository;
 
     EtudierRepository etudierRepository;
+
     @Autowired
     public EtudiantServiceImpl(EtudierRepository etudierRepository, EtudiantRepository etudiantRepository){
         this.etudierRepository = etudierRepository;
@@ -32,15 +33,18 @@ public class EtudiantServiceImpl implements EtudiantService {
     }
 
     @Override
-    public float getEtudiantNoteByMatier(String lastname, String matiere) {
-        Optional<Etudiant> optionalListEtudier = etudiantRepository.findByLastName(lastname);
-        if(optionalListEtudier.isPresent()){
-            Etudiant etudiant = optionalListEtudier.get();
+    public float getEtudiantNoteByMatiere(String lastname, String matiere) {
+        float result = 0F;
+        Optional<Etudiant> optionalListEtudiant = etudiantRepository.findByLastName(lastname);
+        if(optionalListEtudiant.isPresent()){
+            Etudiant etudiant = optionalListEtudiant.get();
             for(Etudier etudier: etudiant.getMyEtudes()){
-                
+                if(etudier.getMatiere().getName().equals(matiere)){
+                    result = etudier.getNote();
+                }
             }
         }
-        return 0;
+        return result;
     }
 
     @Override

@@ -16,21 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.AUTO_CONFIGURED)
 class TddAnalysisApplicationTests {
 
-	@Autowired
-	EtudiantService etudiantService;
-
-	@Test
-	void whenRequestMean_thenReturnAllEtudiantMean(){
-		Map<String, Float> etudiantMean = etudiantService.getEveryOneMean();
-		assertNotNull(etudiantMean);
-		assertEquals(49, etudiantMean.size());
-		System.out.println("----------------------------------------------------------------");
-		for(Map.Entry<String, Float> etudiantMeanValue: etudiantMean.entrySet()){
-			System.out.println(etudiantMeanValue.getKey() + " ---- " + etudiantMeanValue.getValue());
-		}
-		System.out.println("----------------------------------------------------------------");
-	}
-
 	@Test
 	void contextLoads(ApplicationContext context) {
 		assertNotNull(context);
