@@ -23,6 +23,10 @@ class EtudiantServiceImplIntegrationTest {
         assertInstanceOf(Float.class, note);
         assertNotNull(note);
         assertNotEquals(0,note);
+
+        lastname = "Pedro";
+        note = etudiantService.getEtudiantNoteByMatiere(lastname, matiere);
+        assertEquals(0F, note);
     }
 
     @Test
