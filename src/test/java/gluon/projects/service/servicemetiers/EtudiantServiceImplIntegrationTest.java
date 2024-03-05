@@ -4,18 +4,17 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.AUTO_CONFIGURED)
-class EtudiantServiceImplIT {
+class EtudiantServiceImplIntegrationTest {
 
     @Autowired
     EtudiantService etudiantService;
-/*
+
     @Test
     void givenLastNameAndMatier_whenGetEtudiantNoteByMatiere_thenReturnNote() {
         String lastname = "Martin";
@@ -37,7 +36,6 @@ class EtudiantServiceImplIT {
         }
         System.out.println("----------------------------------------------------------------");
     }
-    
- */
+
 
 }
